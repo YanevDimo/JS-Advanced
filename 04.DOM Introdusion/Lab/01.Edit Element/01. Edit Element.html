@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+
+<body>
+<h1>DOM Introduction</h1>
+<ul>
+    <li>DOM Properties Example</li>
+    <li>DOM Method Example</li>
+    <button onclick="'hello'">Click me</button>
+    <input>
+    <script>
+
+        //first way
+        // function edit(element, match, replacer) {
+        //     const text = element.textContent;
+        //     const result = text.replace(match, replacer);
+        //     element.textContent = result;
+        // }
+
+        //second way replaced all matched element
+        // function edit(element, match, replacer) {
+        //     const text = element.textContent;
+        //     const pattern = new RegExp(match, 'g')
+        //     const result = text.replace(pattern, replacer);
+        //     element.textContent = result;
+        // }
+
+        // third way using spli and join
+        function edit(element, match, replacer) {
+            const text = element.textContent;
+            element.textContent = text.split(match).join(replacer);
+        }
+    </script>
+</ul>
+</body>
+
+</html>
