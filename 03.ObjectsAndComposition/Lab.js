@@ -1,9 +1,9 @@
 //01.City Record
 function city(name, population, treasury) {
     const result = {
-        name: name,
-        population: population,
-        treasury: treasury
+        name,
+        population,
+        treasury
     }
     return result;
 }
@@ -57,3 +57,25 @@ towns(['Istanbul <-> 100000',
     ' Istanbul <-> 1000']);
 
 //03. City Taxes
+
+function cityRecord(name, population, treasury) {
+
+    let obj = {
+        name,
+        population,
+        treasury,
+        taxRate: 10,
+        collectTaxes() {
+            this.treasury += Math.floor(this.population * this.taxRate)
+        },
+        applyGrowth(percent) {
+            this.population += Math.floor(this.population * percent / 100)
+        },
+        applyRecession(percent) {
+            this.treasury -= Math.floor(this.treasury * percent / 100)
+        }
+    }
+
+    return obj
+
+}

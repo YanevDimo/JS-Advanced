@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h1>Event Handling Types</h1>
+<h2>Counter</h2>
+<div id="number">0</div>
+
+<button onclick="clearCounter()">clear</button>
+<button id="increment">+</button>
+<button id="decrement">-</button>
+
+<script>
+    let numberElement = document.getElementById('number');
+
+    let incrementButtonElement = document.getElementById('increment');
+    let decrementButtonElement = document.getElementById('decrement');
+
+    //01.Using HTML attribute
+    function clearCounter() {
+        numberElement.textContent = 0;
+    }
+
+    //02.Using DOM element property
+    incrementButtonElement.onclick = () => {
+        let currentNumber = Number(numberElement.textContent);
+        numberElement.textContent = currentNumber + 1;
+    }
+    //03. Using DOM event handler
+    decrementButtonElement.addEventListener('click', () => {
+        let currentNumber = Number(numberElement.textContent);
+        numberElement.textContent = currentNumber - 1;
+    })
+
+</script>
+</body>
+</html>

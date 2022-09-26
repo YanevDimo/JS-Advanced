@@ -14,7 +14,7 @@ solve(['One',
 //02.Print Every N-th Element from an Array
 
 function solve(arr, step) {
-    return arr.filter((element, index) => index % step == 0)
+    return arr.filter((element, index) => index % step === 0)
 
 }
 

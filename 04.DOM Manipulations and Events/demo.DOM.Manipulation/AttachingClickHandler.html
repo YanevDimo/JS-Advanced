@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dokument</title>
+    <style>
+        li{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>Movie List</h1>
+<ul id="movie-list">
+    <li>The Matrix</li>
+    <li>The Lord of the rings</li>
+    <li>Superman</li>
+    <li>Star Wars</li>
+    <li>Game Of Trons</li>
+</ul>
+
+<script>
+    let movieElement = document.querySelectorAll('#movie-list li');
+
+    movieElement.forEach(el => {
+        el.addEventListener('click', (event) => {
+           event.currentTarget.style.textDecoration = 'line-through'
+        })
+    })
+</script>
+
+</body>
+</html>
