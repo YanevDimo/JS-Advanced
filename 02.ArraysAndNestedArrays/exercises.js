@@ -15,9 +15,7 @@ solve(['One',
 
 function solve(arr, step) {
     return arr.filter((element, index) => index % step === 0)
-
 }
-
 solve(['5',
         '20',
         '31',
@@ -27,22 +25,24 @@ solve(['5',
 
 //03. Add and Remove Elements
 
-function solve(arr) {
-    let newArr = [];
-    let numb = 0;
-    for (let i = 0; i < arr.length; i++) {
-        numb++;
-        let command = arr[i];
-        if (command === 'add') {
-            newArr.push(numb)
-        } else if (command === 'remove') {
-            newArr.pop()
+function addAndRemoveElements(commands){
+    let result = [];
+
+    for(let i = 0; i < commands.length; i++){
+        if(commands[i] === 'add'){
+            result.push(i+1);
+        }
+        else if(commands[i] === 'remove'){
+            result.pop();
         }
     }
-    if (newArr.length === 0) {
-        console.log('Emppty')
-    } else {
-        console.log(newArr.join('\n'))
+    if(result.length === 0){
+        console.log('Empty');
+    }
+    else{
+        for(let i = 0; i < result.length; i++){
+            console.log(result[i]);
+        }
     }
 }
 

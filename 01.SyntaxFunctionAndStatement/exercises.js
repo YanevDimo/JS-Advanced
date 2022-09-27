@@ -8,8 +8,19 @@ function fruit(fruitName, weightInGrams, pricePerKg) {
 
 fruit('orange', 2500, 1.80);
 
-//02
-
+//02 Greatest Common Divisor – GCD
+function greateComonsDivisor(x, y) {
+    if ((typeof x !== 'number') || (typeof y !== 'number'))
+        return false;
+    x = Math.abs(x);
+    y = Math.abs(y);
+    while(y) {
+        var t = y;
+        y = x % y;
+        x = t;
+    }
+    return x;
+}
 
 //03 SameNumbers
 
@@ -22,7 +33,7 @@ function sameNumbers(number) {
     for (let i = 0; i < input.length; i++) {
         let currentDigit = +input[i];
         sum += currentDigit;
-        if (firstDigit != currentDigit) {
+        if (firstDigit !== currentDigit) {
             isSame = false;
         }
     }
@@ -39,25 +50,46 @@ function previosDay(year, moth, day) {
     date.setDate(date.getDate() - 1);
     console.log(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`)
 }
-
 previosDay(2016, 9, 30);
 
 //5 Time to Walk
 
-function walking(steps, footprint, speed) {
-    let distanceMeters = steps * footprint;
-    let speedMetersSecond = speed / 3.6;
-    let time = distanceMeters / speedMetersSecond;
-    let rest = Math.floor(distanceMeters / 500);
+function walkingTime(steps, stepLength, speed){
 
-    let timeMin = Math.floor(time / 60);
-    let timeSec = Math.round(time - (timeMin * 60));
-    let timeHour = Math.flor(time / 3600);
+    let distance = steps * stepLength;
 
-    console.log((timeHour < 10 ? "0" : "") + timeHour + ":"
-        + (timeMin + rest < 10 ? "0" : "") + (timeMin + rest) + ":"
-        + (timeSec < 10 ? "0" : "") + timeSec)
+    let breakMinutes = Math.floor(distance / 500);
 
+    let timeInSeconds = ((distance / 1000) / speed) * 3600;
+
+    let seconds = Math.round(timeInSeconds % 60);
+    let minutes = Math.floor(timeInSeconds / 60) + breakMinutes;
+    let hours = Math.floor(timeInSeconds / 3600);
+
+    let result = '';
+
+    if(hours > 10){
+        result += `${hours}:`
+    }
+    else{
+        result += `0${hours}:`
+    }
+
+    if(minutes > 10){
+        result += `${minutes}:`
+    }
+    else{
+        result += `0${minutes}:`
+    }
+
+    if(seconds > 10){
+        result += `${seconds}`
+    }
+    else{
+        result += `$0${seconds}`
+    }
+
+    console.log(result);
 }
 
 walking(4000, 0.6, 5);
@@ -105,3 +137,18 @@ roadRadar(120,"interstate");
 
 //7 CookingByNumbers
 
+function cookingByNumbers(num, command1, command2, command3, command4, command5) {
+    let number = Number(num);
+    const commandList = [command1, command2, command3, command4, command5]
+    const operation = {
+        chop() { num = num / 2; },
+        dice() { num = Math.sqrt(num); },
+        spice() { num += 1; },
+        bake() { num = num * 3; },
+        fillet() { num -= num * 20 / 100; },
+    };
+    for (let i = 0; i < commandList.length; i++) {
+        operation[commandList[i]]();
+        console.log(num);
+    }
+}

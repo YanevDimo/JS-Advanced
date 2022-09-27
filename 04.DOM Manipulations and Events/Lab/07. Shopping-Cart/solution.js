@@ -8,9 +8,7 @@ function solve() {
     for (const button of addProductButtons) {
         button.addEventListener('click', addProductToCart)
     }
-
-    let checkoutButton = document.querySelector('.checkout').addEventListener('click', checkout);
-
+    document.querySelector('.checkout').addEventListener('click', checkout);
     function checkout(){
         let total = productPrices.reduce((a, b) => a + b, 0);
         textArea.value += `You bought ${products.join(', ')} for ${total.toFixed(2)}.`;
