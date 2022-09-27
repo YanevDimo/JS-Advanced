@@ -1,21 +1,15 @@
 function validate() {
-    //select input field add change event listener
-    document.getElementById('email').addEventListener('change', onChange)
-    {
+    let inputField = document.getElementById('email');
+    inputField.addEventListener('change', checkEmail);
 
-//onChange -> validate input
-        function onChange(event) {
-            const email = event.target.value;
+    function checkEmail(ev){
+        let text = ev.target.value;
+        let regex = /[a-z]+@[a-z]+\.[a-z]+/;
 
-            if (/^[a-z]+@[a-z]+\.[a-z]+$/.test(email)) {
-                //if valid -> add class error
-
-            } else {
-                //else -> remove class error
-                event.target.className = 'error'
-            }
+        if(!regex.test(text)){
+            ev.target.className = 'error';
+        } else{
+            ev.target.className = '';
         }
     }
-
-
 }
