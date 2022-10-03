@@ -14,6 +14,10 @@ function solve() {
         kind: fields[2],
         currentOwner: fields[3]
     }
+
+    //OR const[name,age,kind,currentOwner] = field.map(f => f.value); AND important is ->
+    // cons fields = Array.from(document.querySelectorAll('#container input'));
+
     addBtn.addEventListener('click', addPet);
 
     // Add new pet
