@@ -1,5 +1,5 @@
 {
-  "name": "JS-Advanced",
+  "name": "js-advanced",
   "version": "1.0.0",
   "dependencies": {
     "chai": "^4.3.6",
@@ -7,5 +7,20 @@
   },
   "devDependencies": {
     "nyc": "^15.1.0"
-  }
+  },
+  "main": "exercises.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YanevDimo/JS-Advances.git"
+  },
+  "author": "DY",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YanevDimo/JS-Advances/issues"
+  },
+  "homepage": "https://github.com/YanevDimo/JS-Advances#readme",
+  "description": ""
 }
