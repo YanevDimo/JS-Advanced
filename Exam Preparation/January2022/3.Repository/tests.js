@@ -106,17 +106,5 @@ describe("Repository", function () {
             expect(()=>repository.update(2,newEntity)).to.throw('Entity with id: 2 does not exist!');
         });
     })
-    describe('Delete',()=> {
-        it('should ', function () {
-           let repository = new Repository(properties);
-           repository.add(entity);
-           repository.del(0);
 
-           expect(repository.count).to.equal(0);
-        });
-        it('should throw error when deleting entity on valid id  ', function () {
-            let repository = new Repository(properties);
-            expect(()=> repository.del(2)).to.throw(Error,'Entity with id: 2 does not exist!')
-        });
-    })
 });

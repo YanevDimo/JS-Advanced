@@ -89,5 +89,12 @@ describe('Car Service ', () => {
         it('should return correct parameters all parts', function () {
             expect(carService.partsToBuy([3],[3])).to.equal(0)
         });
+        it('should return correct parameters all parts', function () {
+            expect(carService.partsToBuy([
+                { part: "blowoff valve", price: 145 },
+                { part: "coil springs", price: 230 },
+            ],
+                ["blowoff valve", "injectors"])).to.equal(145)
+        });
     })
 })
