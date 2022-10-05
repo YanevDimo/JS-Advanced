@@ -27,7 +27,7 @@ function validate() {
         e.preventDefault();
 
         let usernameRegex = /^[A-Za-z\d]{3,20}$/;
-        let passwordRegex = /^[\w]{5,15}$/;
+        let passwordRegex = /^\w{5,15}$/;
         let emailRegex = /^[^@.]+@[^@]*\.[^@]*$/;
 
         if(usernameInput.value.match(usernameRegex)){
