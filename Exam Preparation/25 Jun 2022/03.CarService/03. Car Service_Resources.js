@@ -94,7 +94,7 @@ describe('Car Service ', () => {
                 { part: "blowoff valve", price: 145 },
                 { part: "coil springs", price: 230 },
             ],
-                ["blowoff valve", "injectors"])).to.equal(145)
+                ["blow-off valve", "injectors"])).to.equal(145)
         });
     })
 })
