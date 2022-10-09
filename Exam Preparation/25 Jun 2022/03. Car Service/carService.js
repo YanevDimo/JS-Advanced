@@ -1,4 +1,4 @@
-const {expect} = require("chai");
+const {expect} = require('chai');
 const carService = {
     isItExpensive(issue) {
         if (issue === "Engine" || issue === "Transmission") {
@@ -47,6 +47,9 @@ const carService = {
 };
 module.exports = carService;
 
+
+
+
 describe('Car Service ', () => {
     describe('isItExpensive', () => {
         it('should return valid parameters ', function () {
@@ -87,14 +90,14 @@ describe('Car Service ', () => {
                 carService.partsToBuy('', '')).to.throw(Error, 'Invalid input')
         });
         it('should return correct parameters all parts', function () {
-            expect(carService.partsToBuy([3],[3])).to.equal(0)
+            expect(carService.partsToBuy([3], [3])).to.equal(0)
         });
         it('should return correct parameters all parts', function () {
             expect(carService.partsToBuy([
-                { part: "blowoff valve", price: 145 },
-                { part: "coil springs", price: 230 },
-            ],
-                ["blow-off valve", "injectors"])).to.equal(145)
+                    {part: "blowoff valve", price: 145},
+                    {part: "coil springs", price: 230},
+                ],
+                ["blowoff valve", "injectors"])).to.equal(145)
         });
-    })
-})
+    });
+});
