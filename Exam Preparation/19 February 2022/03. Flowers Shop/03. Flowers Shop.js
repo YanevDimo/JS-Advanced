@@ -1,4 +1,4 @@
-const {expect} = require('chai');
+// const {expect} = require('chai');
 const flowerShop = {
     calcPriceOfFlowers(flower, price, quantity) {
         if (typeof flower != 'string' || !Number.isInteger(price) || !Number.isInteger(quantity)) {
@@ -31,17 +31,4 @@ const flowerShop = {
         return shop.join(' / ');
     }
 }
-describe('Test flover shop',()=>{
-    describe('test calculate price of flowers', ()=>{
-        it('should ', function () {
-
-        });
-    });
-
-    describe('test check flower avalible',()=>{
-
-    })
-    describe('test sell flower',()=>{
-
-    })
-})
+module.exports = flowerShop
