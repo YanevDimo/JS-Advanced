@@ -3,17 +3,20 @@ class Bank {
         this.bankname = bankName;
         this.allCustomers = [];
     }
-    customer() {
-        firstName;
-        lastName;
-        personalId;
-        if (this.customer()){
-            return new Error(`${firstName} ${lastName} is already our customer!`)
-        }else{
-            return new this.customer(firstName,lastName);
+
+    newCustomer(firstName,lastName,personalId) {
+        let customer = {
+            firstName,
+            lastName,
+            personalId
         }
-        console.log(this.customer())
+        if (!customer) {
+            this.allCustomers.push(customer)
+            console.log(this.allCustomers)
+        }
     }
-
-
 }
+
+let bank = new Bank('SoftUniBank');
+
+
