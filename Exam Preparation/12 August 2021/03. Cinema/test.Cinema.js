@@ -5,7 +5,7 @@ describe('test cinema', () => {
     describe('Show Movies', () => {
         it('should return current movie', function () {
             expect(cinema.showMovies([])).to.equal('There are currently no movies to show.');
-            expect(cinema.showMovies(['Game of throne'])).to.equal('Game of throne');
+            expect(cinema.showMovies(['Game of thrones'])).to.equal('Game of thrones');
             expect(cinema.showMovies(['abc', 'def', 'xyz'])).to.equal('abc, def, xyz');
         });
     })
