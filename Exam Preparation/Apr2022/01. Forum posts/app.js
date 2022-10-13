@@ -26,7 +26,7 @@ function solve() {
         const content = input.content.value;
 
         // validate input
-        if (title == "" || category == "" || content == "") {
+        if (title === "" || category === "" || content === "") {
             return;
         }
         // create list item -

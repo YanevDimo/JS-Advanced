@@ -11,7 +11,8 @@ function solution() {
     editButton.disabled = true;
     continueButton.disabled = true;
 
-    const inputValues = Array.from(document.getElementById('form').querySelectorAll('input'));
+    const inputValues = Array.from(document.getElementById('form')
+        .querySelectorAll('input'));
     const labelsValues = Array.from(document.getElementById('form').querySelectorAll('label'));
     inputValues.pop();
 
