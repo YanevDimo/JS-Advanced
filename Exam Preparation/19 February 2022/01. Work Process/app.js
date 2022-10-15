@@ -1,8 +1,5 @@
 function solve() {
 
-
-   function solve() {
-
       const fname = document.getElementById("fname");
       const lname = document.getElementById("lname");
       const email = document.getElementById("email");
@@ -96,8 +93,5 @@ function solve() {
          }
          return element;
       }
-
-   }
-   solve()
 }
 solve()
