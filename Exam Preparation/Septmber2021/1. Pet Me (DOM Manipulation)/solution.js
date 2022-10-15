@@ -40,7 +40,7 @@ function solve() {
         const contactBtn = e('button', {}, 'Contact with owner');
 
         const pet = e('li', {},
-            e('p', {},
+                e('p', {},
                 e('strong', {}, name),
                 ' is a ',
                 e('strong', {}, age),
