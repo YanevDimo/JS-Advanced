@@ -17,7 +17,7 @@ class LibraryCollection {
 
         if (!findBook) {
             throw new Error(`${bookName} is not in the collection.`);
-        };
+        }
 
         if (findBook.payed) {
             throw new Error(`${bookName} has already been paid.`)
@@ -28,11 +28,11 @@ class LibraryCollection {
     }
 
     removeBook(bookName) {
-        const findBook = this.books.find(b => b.bookName == bookName);
+        const findBook = this.books.find(b => b.bookName === bookName);
 
         if (!findBook) {
             throw new Error("The book, you're looking for, is not found.");
-        };
+        }
 
         if (!findBook.payed) {
             throw new Error(`${bookName} need to be paid before removing from the collection.`);
@@ -55,7 +55,7 @@ class LibraryCollection {
             });
             return result.join('\n').trim();
         } else {
-            let findBook = this.books.find(b => b.bookAuthor == bookAuthor);
+            let findBook = this.books.find(b => b.bookAuthor === bookAuthor);
 
             if (findBook) {
                 let result = [];

@@ -54,7 +54,7 @@ function solve() {
     }
 
     function deletePost(e) {
-        article = e.target.parentNode.parentNode;
+        let article = e.target.parentNode.parentNode;
         article.remove();
     }
 
