@@ -58,7 +58,7 @@ function solve() {
         messageInputElement.value = '';
 
         // added send button functionality
-        function sentMails(e) {
+        function sentMails() {
             let ulSendList = document.querySelector('.sent-list');
             let liSent = htmlElementsGenerator('li');
             let spanToSent = htmlElementsGenerator('span', `To: ${h4ToElement.textContent.split('Recipient Name: ')[1]}`);
@@ -68,11 +68,12 @@ function solve() {
             let deleteSent = htmlElementsGenerator('button', 'Delete');
             deleteSent.setAttribute('type', 'submit');
             deleteSent.setAttribute('class', 'delete');
-
             deleteSent.addEventListener('click', () => {
                 let ulDeleteList = document.querySelector('.delete-list');
                 liSent.removeChild(divSent);
                 ulDeleteList.appendChild(liSent);
+
+                // ulSendList.removeChild(liSent)
             })
 
             ulElement.removeChild(liElement)
@@ -85,7 +86,8 @@ function solve() {
 
         }
 
-        function deleteMail(e) {
+        //
+        function deleteMail() {
             let ulDeleteList = document.querySelector('.delete-list');
 
             let liDeleted = htmlElementsGenerator('li');
@@ -99,6 +101,10 @@ function solve() {
             ulElement.removeChild(liElement);
 
         }
+
+
+
+
         function htmlElementsGenerator(tagName, content) {
             let el = document.createElement(tagName);
             if (content) {

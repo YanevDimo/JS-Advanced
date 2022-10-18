@@ -32,10 +32,7 @@ describe('Test Book Selection', () => {
                     [
                         { title: "The Da Vinci Code", genre: "Thriller" },
                         { title: "Inferno", genre: "Mystery" },
-                    ],
-                    "Thriller"
-                )
-            ).to.deep.equal(["The Da Vinci Code"]);
+                    ], "Thriller")).to.deep.equal(["The Da Vinci Code"]);
         });
     })
 })
