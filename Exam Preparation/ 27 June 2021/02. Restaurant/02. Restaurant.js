@@ -7,11 +7,9 @@ class Restaurant {
         this.history = [];
     }
 
-
     loadProducts(products) {
         products.forEach((el) => {
             let [name, quantity, totalPrice] = el.split(" ");
-
 
             quantity = Number(quantity);
             totalPrice = Number(totalPrice);
