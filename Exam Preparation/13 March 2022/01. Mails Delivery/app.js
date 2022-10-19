@@ -38,8 +38,7 @@ function solve() {
         deleteBtn.setAttribute('type', 'submit');
         deleteBtn.setAttribute('id', 'delete');
         deleteBtn.addEventListener('click', deleteMail);
-
-
+        
         //append
         divElement.appendChild(sendBtn);
         divElement.appendChild(deleteBtn);
@@ -99,12 +98,7 @@ function solve() {
             ulDeleteList.appendChild(liDeleted);
 
             ulElement.removeChild(liElement);
-
         }
-
-
-
-
         function htmlElementsGenerator(tagName, content) {
             let el = document.createElement(tagName);
             if (content) {
@@ -115,3 +109,36 @@ function solve() {
     }
 }
 solve()
+function mailsDelivery(){
+    const recipientName = document.getElementById('recipientName').value;
+    const titleInput = document.getElementById('title').value;
+    const message = document.getElementById('message').value;
+    const ulElement = document.getElementById('list');
+
+    document.getElementById('add').addEventListener('click',addList);
+    document.getElementById('reset').addEventListener('click',resetMail);
+
+    function addList(){
+        ev.preventDefault();
+        document.createElement('li')
+
+
+    }
+    function htmlGenerator(tag, text, parent, className, id) {
+        const element = document.createElement(tag);
+        element.textContent = text;
+        if (parent) {
+            parent.appendChild(element);
+        }
+        if (className) {
+            element.className = className;
+        }
+        if (id) {
+            element.setAttribute('id', id);
+        }
+
+        return element;
+    }
+
+}
+mailsDelivery();
