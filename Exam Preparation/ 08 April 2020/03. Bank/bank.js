@@ -1,18 +1,21 @@
+
+
 class Bank {
     constructor(bankName) {
-        this.bankname = bankName;
+        this._bankName = bankName;
         this.allCustomers = [];
     }
 
     newCustomer(customer) {
-
-        if (this.allCustomers.find((c) => c.firstName === customer.firstName && c.lastName === customer.lastName)) {
-            throw new Error(`${customer.firstName} ${customer.lastName} is already our customer!”`);
-        }else{
-            this.allCustomers.push(customer);
+        if (
+            this.allCustomers.find((c) => c.firstName === customer.firstName && c.lastName === customer.lastName)) {
+            throw new Error(
+                `${customer.firstName} ${customer.lastName} is already our customer!”`
+            );
         }
-        return customer;
 
+        this.allCustomers.push(customer);
+        return customer;
     }
 
     depositMoney(personalId, amount) {
@@ -39,7 +42,7 @@ class Bank {
         personalId = Number(personalId);
         amount = Number(amount);
 
-        let person = this.allCustomers.find((p) => p.personalId === personalId);
+        let person = this.allCustomers.find((x) => x.personalId === personalId);
 
         if (!person) {
             throw new Error("We have no customer with this ID!");
@@ -88,6 +91,8 @@ class Bank {
         return result.join("\n");
     }
 }
+
+
 
 let bank = new Bank('SoftUniBank');
 
