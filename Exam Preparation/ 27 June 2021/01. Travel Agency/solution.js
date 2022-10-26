@@ -23,7 +23,7 @@ function solution() {
         if (fullName.value && email.value !== '') {
             for (let i = 0; i < inputValues.length; i++) {
                 const liElement = document.createElement('li');
-                liElement.textContent= `${labelsValues[i].textContent} ${inputValues[i].value}`;
+                liElement.textContent = `${labelsValues[i].textContent} ${inputValues[i].value}`;
                 preview.appendChild(liElement);
             }
             for (let input of inputValues) {
@@ -44,7 +44,7 @@ function solution() {
         editButton.disabled = true;
         continueButton.disabled = true;
     })
-    continueButton.addEventListener('click',(event)=>{
+    continueButton.addEventListener('click', (event) => {
         block.innerHTML = '';
         let h3 = document.createElement('h3');
         h3.textContent = 'Thank you for your reservation!';

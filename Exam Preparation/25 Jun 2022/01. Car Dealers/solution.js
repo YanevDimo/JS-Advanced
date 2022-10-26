@@ -12,9 +12,7 @@ function solve() {
   const totalProfit = document.getElementById("profit");
   let profitMade = 0;
 
-  const submitButtonEl = document
-    .getElementById("publish")
-    .addEventListener("click", (ev) => {
+   document.getElementById("publish").addEventListener("click", (ev) => {
       ev.preventDefault();
       if (
         makeInputEl.value !== "" &&
@@ -33,7 +31,7 @@ function solve() {
           firstPriceInputEl.value,
           sellingPriceInputEl.value
         );
-        clearInputFileds();
+        clearInputFields();
       }
     });
 
@@ -142,7 +140,7 @@ function solve() {
     totalProfit.textContent = profitMade;
   }
 
-  function clearInputFileds() {
+  function clearInputFields() {
     makeInputEl.value = "";
     modelInputEl.value = "";
     yearInputEl.value = "";

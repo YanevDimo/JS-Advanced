@@ -1,4 +1,4 @@
-function solution() {
+function solution()     {
     const addGiftBtn = document.querySelector("button");
     const giftName = document.querySelector("input");
     const sections = document.querySelectorAll("section");
